@@ -57,12 +57,12 @@ func (l *logPrefix) Error(format string, v ...interface{}) {
 	if l.prefix != "" {
 		format = fmt.Sprintf("[%s] %s", l.prefix, format)
 	}
-	log.Error(l.skip, format, v...)
+	log.Error(format, v...)
 }
 
 func (l *logPrefix) Fatal(format string, v ...interface{}) {
 	if l.prefix != "" {
 		format = fmt.Sprintf("[%s] %s", l.prefix, format)
 	}
-	log.Fatal(l.skip, format, v...)
+	log.Fatal(format, v...)
 }
